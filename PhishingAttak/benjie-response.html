@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU SIS — IT Expert Response</title>
+    <link rel="stylesheet" href="mis-style.css">
+    <link rel="stylesheet" href="benjie-style.css">
+</head>
+<body>
+    <!-- LOGIN -->
+    <div id="login-screen" class="split-layout">
+        <div class="left-panel">
+            <div class="card">
+                <div class="card-header">
+                    <img src="C:\Users\basco\OneDrive\Documents\Practice Shts\PhishingAttak\Cebu_Technological_University_Logo.png" alt="CTU Logo" class="logo">
+                    <div>
+                        <div class="uni-name">Cebu Technological University</div>
+                        <div class="portal-title">IT Expert Console</div>
+                        <div class="portal-sub">to continue to CTU DAANBANTAYAN CAMPUS</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                    <input type="text" id="staff-id" class="input-field" placeholder="Staff ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="staff-pass" class="input-field" placeholder="Password">
+                </div>
+                <div class="form-row">
+                    <label class="remember"><input type="checkbox"> Remember me?</label>
+                    <a href="#" class="link">Forgot Password?</a>
+                </div>
+                <div id="login-error" class="error-msg" style="display:none;">Invalid credentials. Please try again.</div>
+                <button class="btn-verify" onclick="handleLogin()">LOGIN</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="CampusImg.png" alt="Campus" class="campus-img">
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard-screen" style="display:none; flex-direction:column; height:100vh;">
+        <div class="dash-topbar">
+            <div class="dash-topbar-left">
+                <img src="C:\Users\basco\OneDrive\Documents\Practice Shts\PhishingAttak\Cebu_Technological_University_Logo.png" alt="CTU" class="top-logo">
+                <span class="dash-title">CTU SIS — IT Expert Incident Response</span>
+            </div>
+            <div class="dash-topbar-right">
+                <span class="staff-badge">IT Expert: Benjie</span>
+                <span id="dash-time" class="dash-time"></span>
+                <button class="btn-logout" onclick="handleLogout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="dash-body">
+            <div class="sidebar">
+                <div class="sidebar-item active">🛡 Incident Response</div>
+                <div class="sidebar-item">🔒 Account Controls</div>
+                <div class="sidebar-item">📡 Network Security</div>
+                <div class="sidebar-item">📋 Audit Logs</div>
+            </div>
+
+            <div class="dash-content">
+                <div class="section-card" style="margin-bottom:16px;">
+                    <div class="section-title">Escalated Case</div>
+                    <div class="section-sub">Referred by MIS Staff: Romeo &nbsp;|&nbsp; Student: Allan De Jesus &nbsp;|&nbsp; <span class="text-red">Status: COMPROMISED</span></div>
+                    <div class="victim-banner">
+                        <div class="victim-col"><span class="vlabel">STUDENT ID</span><span>8230580</span></div>
+                        <div class="victim-col"><span class="vlabel">EMAIL</span><span>allandejesus@gmail.com</span></div>
+                        <div class="victim-col"><span class="vlabel">SUSPICIOUS IP</span><span class="text-red">45.33.32.156 — Foreign Node</span></div>
+                        <div class="victim-col"><span class="vlabel">TIME OF BREACH</span><span class="text-red">09:11:43 AM</span></div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="section-title">Response Steps</div>
+                    <div class="section-sub">Click each step to execute. Steps must be completed in order.</div>
+                    <div id="steps-container"></div>
+                </div>
+
+                <div id="complete-banner" class="complete-banner" style="display:none;">
+                    <span>✔</span>
+                    <div>
+                        <div class="cb-title">All Response Actions Completed</div>
+                        <div class="cb-sub">Incident contained. Account secured. Monitoring active.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="benjie-script.js"></script>
+</body>
+</html>

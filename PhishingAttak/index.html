@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ACCESS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    
+    <div class="container">
+        <div class="header">
+            <div class="status-bar">
+                <span class="status-indicator"></span>
+                <span>CONNECTION ESTABLISHED</span>
+                <span class="timestamp" id="timestamp"></span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="terminal">
+                <div class="terminal-header">PHISHING ATTACK - SUCCESS</div>
+                <div id="terminal-output"></div>
+            </div>
+
+            <div class="data-panels">
+                <div class="panel victim-info">
+                    <h3>VICTIM DATA COMPROMISED</h3>
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="label">NAME:</span>
+                            <span class="value" id="victim-name">Allan De Jesus</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">EMAIL:</span>
+                            <span class="value" id="victim-email">allandejesus@gmail.com</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">PASSWORD:</span>
+                            <span class="value" id="victim-password">MyP@ssw0rd@gmail.com</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">IP ADDRESS:</span>
+                            <span class="value" id="victim-ip">192.182.013.221</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">LOCATION:</span>
+                            <span class="value" id="victim-location">Tapilon</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="label">DEVICE:</span>
+                            <span class="value" id="victim-device">LOADING...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel system-status">
+                    <h3>SYSTEM STATUS</h3>
+                    <div class="progress-item">
+                        <span>DATA EXTRACTION</span>
+                        <div class="progress-bar"><div class="progress-fill" id="progress-1"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <span>CREDENTIAL HARVEST</span>
+                        <div class="progress-bar"><div class="progress-fill" id="progress-2"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <span>SYSTEM ACCESS</span>
+                        <div class="progress-bar"><div class="progress-fill" id="progress-3"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="warning">⚠ FOR EDUCATIONAL/FILM PURPOSES ONLY ⚠</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

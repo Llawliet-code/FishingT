@@ -1,0 +1,131 @@
+.victim-banner {
+    display: flex;
+    gap: 0;
+    margin-top: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.victim-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    border-right: 1px solid #e0e0e0;
+    font-size: 13px;
+    color: #333;
+}
+
+.victim-col:last-child { border-right: none; }
+
+.vlabel {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* Steps */
+.step-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.step-card.active  { border-color: #1565c0; }
+.step-card.done    { border-color: #43a047; background: #f9fffe; }
+.step-card.locked  { opacity: 0.5; }
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e8f0fe;
+    color: #1565c0;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.step-card.done .step-num {
+    background: #43a047;
+    color: #fff;
+}
+
+.step-info { flex: 1; }
+.step-title { font-size: 14px; font-weight: 600; color: #1a1a2e; }
+.step-desc  { font-size: 12px; color: #888; margin-top: 2px; }
+
+.step-btn {
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.step-btn:hover:not(:disabled) { background: #0d47a1; }
+.step-btn:disabled { background: #bbb; cursor: default; }
+.step-card.done .step-btn { background: #43a047; }
+
+/* Terminal inside step */
+.step-terminal {
+    background: #0d1117;
+    padding: 12px 16px;
+    border-top: 1px solid #e0e0e0;
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.terminal-lines { font-family: 'Courier New', monospace; }
+
+.tline {
+    font-size: 12px;
+    color: #00cc66;
+    line-height: 1.7;
+}
+
+.step-result {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #00ff88;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+/* Complete banner */
+.complete-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 20px 24px;
+    background: #f1f8e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 6px;
+    font-size: 28px;
+    color: #2e7d32;
+}
+
+.cb-title { font-size: 15px; font-weight: 700; color: #2e7d32; }
+.cb-sub   { font-size: 12px; color: #666; margin-top: 2px; }

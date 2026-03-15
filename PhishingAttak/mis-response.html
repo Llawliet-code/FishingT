@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTU SIS — MIS Security Portal</title>
+    <link rel="stylesheet" href="mis-style.css">
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="split-layout">
+        <div class="left-panel">
+            <div class="card">
+                <div class="card-header">
+                    <img src="Cebu_Technological_University_Logo.png" alt="CTU Logo" class="logo">
+                    <div>
+                        <div class="uni-name">Cebu Technological University</div>
+                        <div class="portal-title">MIS Security Portal</div>
+                        <div class="portal-sub">to continue to CTU DAANBANTAYAN CAMPUS</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                    <input type="text" id="staff-id" class="input-field" placeholder="Staff ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="staff-pass" class="input-field" placeholder="Password">
+                </div>
+                <div class="form-row">
+                    <label class="remember"><input type="checkbox"> Remember me?</label>
+                    <a href="#" class="link">Forgot Password?</a>
+                </div>
+                <div id="login-error" class="error-msg" style="display:none;">Invalid credentials. Please try again.</div>
+                <button class="btn-verify" onclick="handleLogin()">LOGIN</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <img src="CampusImg.png" alt="Campus" class="campus-img">
+        </div>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div id="dashboard-screen" style="display:none;">
+        <div class="dash-topbar">
+            <div class="dash-topbar-left">
+                <img src="Cebu_Technological_University_Logo.png" alt="CTU" class="top-logo">
+                <span class="dash-title">CTU SIS — MIS Security Portal</span>
+            </div>
+            <div class="dash-topbar-right">
+                <span class="staff-badge">MIS Staff: Romeo</span>
+                <span id="dash-time" class="dash-time"></span>
+                <button class="btn-logout" onclick="handleLogout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="dash-body">
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-item active">🔍 Log Checker</div>
+                <div class="sidebar-item">👤 Account Management</div>
+                <div class="sidebar-item">📋 Incident Reports</div>
+                <div class="sidebar-item">⚙ System Settings</div>
+            </div>
+
+            <!-- Main content -->
+            <div class="dash-content">
+
+                <!-- Search bar -->
+                <div class="section-card">
+                    <div class="section-title">Security Log Checker</div>
+                    <div class="section-sub">Enter the student email address to retrieve login activity and security logs.</div>
+                    <div class="search-row">
+                        <input type="text" id="email-input" class="input-field" placeholder="Enter student email address..." style="flex:1;">
+                        <button class="btn-verify" onclick="checkLogs()">CHECK LOGS</button>
+                    </div>
+                    <div id="search-error" class="error-msg" style="display:none;">No account found for that email address.</div>
+                </div>
+
+                <!-- Results (hidden until search) -->
+                <div id="results-area" style="display:none;">
+
+                    <div class="results-grid">
+
+                        <!-- Account Info -->
+                        <div class="section-card">
+                            <div class="section-title">Account Information</div>
+                            <table class="info-table">
+                                <tr><td class="td-label">Student ID</td><td id="r-id"></td></tr>
+                                <tr><td class="td-label">Full Name</td><td id="r-name"></td></tr>
+                                <tr><td class="td-label">Email</td><td id="r-email"></td></tr>
+                                <tr><td class="td-label">Program</td><td id="r-program"></td></tr>
+                                <tr><td class="td-label">Year Level</td><td id="r-year"></td></tr>
+                                <tr><td class="td-label">Account Status</td><td id="r-status"></td></tr>
+                            </table>
+                        </div>
+
+                        <!-- Security Alert -->
+                        <div class="section-card alert-card" id="alert-card">
+                            <div class="alert-banner">
+                                <span class="alert-icon">⚠</span>
+                                <div>
+                                    <div class="alert-title">Suspicious Login Detected</div>
+                                    <div class="alert-sub">Unauthorized access attempt from an unrecognized location.</div>
+                                </div>
+                            </div>
+                            <table class="info-table" style="margin-top:12px;">
+                                <tr><td class="td-label">Suspicious IP</td><td id="r-ip" class="text-red"></td></tr>
+                                <tr><td class="td-label">Location</td><td id="r-loc" class="text-red"></td></tr>
+                                <tr><td class="td-label">Time of Access</td><td id="r-time" class="text-red"></td></tr>
+                                <tr><td class="td-label">Device</td><td id="r-device"></td></tr>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <!-- Login Log Table -->
+                    <div class="section-card" style="margin-top:16px;">
+                        <div class="section-title">Login Activity Log</div>
+                        <table class="log-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>IP Address</th>
+                                    <th>Location</th>
+                                    <th>Device</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log-table-body"></tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mis-script.js"></script>
+</body>
+</html>
